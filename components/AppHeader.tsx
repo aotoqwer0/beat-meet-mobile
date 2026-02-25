@@ -42,7 +42,7 @@ export default function AppHeader() {
 
           {/* メッセージボタン */}
           <TouchableOpacity
-            onPress={() => router.push("/messages")}
+            onPress={() => router.push("/(tabs)/messages")}
             className="w-10 h-10 rounded-full items-center justify-center active:bg-zinc-900 relative"
           >
             <Ionicons

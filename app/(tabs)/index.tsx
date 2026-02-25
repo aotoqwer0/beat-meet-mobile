@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { useCallback, useEffect, useState } from "react";
 import {
-    ActivityIndicator,
-    Alert,
-    RefreshControl,
-    ScrollView,
-    View,
+  ActivityIndicator,
+  RefreshControl,
+  ScrollView,
+  View
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { supabase } from "../../lib/supabase";
@@ -14,11 +13,13 @@ import { UISong } from "../../types";
 
 import { useMusicPlayer } from "../../hooks/useMusicPlayer";
 
+import { useRouter } from "expo-router";
 import FeaturedTracksGrid from "../../components/Home/FeaturedTracksGrid";
 import HeroSection from "../../components/Home/HeroSection";
 import MoodGenreGrid from "../../components/Home/MoodGenreGrid";
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [songs, setSongs] = useState<UISong[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false); // ボタン用のリフレッシュ状態
@@ -118,13 +119,16 @@ export default function HomeScreen() {
     }
   }
 
+  // const handleStartListening = () => {
+  //   if (songs.length === 0) {
+  //     Alert.alert("No songs", "There are no songs to play.");
+  //     return;
+  //   }
+  //   const randomIndex = Math.floor(Math.random() * songs.length);
+  //   playSong(songs[randomIndex]);
+  // };
   const handleStartListening = () => {
-    if (songs.length === 0) {
-      Alert.alert("No songs", "There are no songs to play.");
-      return;
-    }
-    const randomIndex = Math.floor(Math.random() * songs.length);
-    playSong(songs[randomIndex]);
+    router.push("/shorts"); // 👈 Shorts画面へ
   };
 
   return (

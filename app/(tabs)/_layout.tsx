@@ -54,6 +54,13 @@ export default function TabLayout() {
         />
 
         <Tabs.Screen
+          name="messages"
+          options={{
+            href: null, // 👈 これでタブバーからボタンを隠します
+          }}
+        />
+
+        <Tabs.Screen
           name="rankings"
           options={{
             title: "Rankings",

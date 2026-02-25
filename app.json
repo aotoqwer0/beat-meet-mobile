@@ -11,11 +11,9 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "UIBackgroundModes": [
-          "audio",
-        ]
+        "UIBackgroundModes": ["audio"]
       },
-      "bundleIdentifier": "com.aoto-qwer.beatmeetmobile"
+      "bundleIdentifier": "com.jrep.beatmeet"
     },
     "android": {
       "adaptiveIcon": {
